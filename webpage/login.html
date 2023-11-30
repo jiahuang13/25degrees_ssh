@@ -108,7 +108,7 @@
                   name="log-username"
                   id="loginName"
                   class="form-control w-100"
-                  placeholder="請輸入Email為帳號"
+                  placeholder="請輸入帳號"
                 />
               </div>
 
@@ -133,7 +133,10 @@
 
               <!-- Submit button -->
               <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary btn-block mb-4">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-block mb-4 login-button"
+                >
                   登入
                 </button>
               </div>
@@ -232,7 +235,7 @@
 
       //提交表單
       document
-        .querySelector(".register-button")
+        .querySelector(".login-button")
         .addEventListener("click", async function () {
           const form = document.querySelector(".register-form");
           const data = serialize(form, {
@@ -258,21 +261,30 @@
             return;
           }
 
+          //提交帳號密碼
           try {
-            //提交數據
             const res = await axios({
-              url: "/register",
+              url: "/login",
               method: "post",
               data: {
                 username,
                 password,
               },
             });
-            // console.log(res.data.message);
+            console.log(res);
             showToast(res.data.message);
+
+            //緩存響應數據 token,username 首頁會用到
+            localStorage.setItem("token", res.data.data.token);
+            localStorage.setItem("username", res.data.data.username);
+
+            //過數秒 跳轉首頁
+            setTimeout(function(){
+            location.href = "../index.html";
+            },1500)
           } catch (error) {
             console.dir(error);
-            showToast(error.response.data.message)
+            showToast(error.response.data.message);
           }
         });
     </script>
