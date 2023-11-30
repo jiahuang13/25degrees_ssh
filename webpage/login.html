@@ -103,7 +103,7 @@
             id="pills-login"
             role="tabpanel"
           >
-            <form method="post" class="login-form">
+            <form class="login-form">
               <!-- username input -->
               <div data-mdb-input-init class="form-outline mb-4">
                 <input
@@ -141,25 +141,11 @@
                 </button>
               </div>
             </form>
-            <!-- <h4 class="text-center text-danger">
-          <?php
-          if (isset($_GET['msg']) && $_GET['msg'] === 1) {
-            echo '輸入的帳號或密碼有誤，請重新登入';
-          } else if (isset($_GET['msg']) && $_GET['msg'] === 2) {
-            echo '請以會員身份登入後，再進入會員中心';
-          } else if (isset($_GET['msg']) && $_GET['msg'] === 3) {
-            echo '請以管理者身份登入後，才能進入後台管理中心';
-          } else if (isset($_GET['msg']) && $_GET['msg'] === 4) {
-            echo '<span class="text-primary">感謝您驗證確認信！
-            歡迎您成為正式會員，請登入再進入會員中心</span>';
-          }
-          ?>
-        </h4> -->
           </div>
 
           <!-- =======================註冊tab======================= -->
           <div class="tab-pane fade" id="pills-register" role="tabpanel">
-            <form method="post" class="register-form">
+            <form class="register-form">
               <!-- Name input -->
               <div data-mdb-input-init class="form-outline mb-4">
                 <input
@@ -188,8 +174,8 @@
               <div class="d-flex justify-content-center">
                 <button
                   data-mdb-ripple-init
-                  type="submit"
-                  class="btn btn-primary btn-block mb-3 mem_addmem_area"
+                  type="button"
+                  class="btn btn-primary btn-block mb-3 register-button"
                 >
                   註冊
                 </button>
@@ -242,21 +228,55 @@
 
     <script src="../assist/axios.js"></script>
     <script src="../assist/common.js"></script>
+    <script src="../assist/form-serialize.js"></script>
     <script>
       // 引入header
       $(".header").load("header.html");
 
       //提交表單
       document
-        .querySelector(".register-form")
-        .addEventListener("submit", function () {
-          alert(11);
-          // const form = document.querySelector(".register-form");
-          // const data = serialize(form, {
-          //   empty: true,
-          //   hash: true,
-          // });
+        .querySelector(".register-button")
+        .addEventListener("click", async function () {
+          const form = document.querySelector(".register-form");
+          const data = serialize(form, {
+            empty: true,
+            hash: true,
+          });
           // console.log(data);
+          const { username, password } = data;
+          // console.log(username, password);
+
+          //非空與長度校驗
+          if (username === "" || password === "") {
+            showToast("帳號和密碼不得為空");
+            return;
+          }
+          // console.log(username.length);
+          if (username.length < 8 || username.length > 30) {
+            showToast("帳號需為8-30個字符");
+            return;
+          }
+          if (password.length < 6 || password.length > 30) {
+            showToast("密碼需為6-30個字符");
+            return;
+          }
+
+          try {
+            //提交數據
+            const res = await axios({
+              url: "/register",
+              method: "post",
+              data: {
+                username,
+                password,
+              },
+            });
+            // console.log(res.data.message);
+            showToast(res.data.message);
+          } catch (error) {
+            console.dir(error);
+            showToast(error.response.data.message)
+          }
         });
     </script>
   </body>
