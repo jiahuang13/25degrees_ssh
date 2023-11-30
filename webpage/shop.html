@@ -276,7 +276,7 @@
 </head>
 
 <body>
-    <?php include('header.php'); ?>
+    <div class="header"></div>
 
 
     <!--     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -531,7 +531,7 @@
     </main>
     </div>
 
-    <?php include('footer.php'); ?>
+    <div class="footer"></div>
 
 
     <!--     <script>function adder() {
@@ -569,6 +569,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
     <script src="../assist/ap.js"></script>
+    <script>
+        $(".header").load("header.html");
+      $(".footer").load("footer.html");
+    </script>
 
 </body>
 
