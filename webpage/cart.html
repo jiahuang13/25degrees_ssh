@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<style>
+body {background-color:#212529 ;}
+    .cart hr {
+        margin-right: 50px;
+        border: 2px solid #fff;
+    }
+
+    .cart h4 {
+        margin: auto;
+        color: #fff;
+    }
+
+    .cart del {
+        color: #aaa;
+    }
+
+    .cart .item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 25px 0;
+    }
+
+    .cart .item img {
+        width: 75px;
+        height: 75px;
+
+    }
+
+    .cart .item p {
+        color: rgb(9, 27, 12);
+        font-weight: bold;
+        font-size: 18px;
+        margin: auto 0;
+    }
+
+
+    .cart ul,
+    .cart li {
+        margin: 0;
+        padding: 0;
+    }
+
+    .counter li {
+        float: left;
+        list-style-type: none;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        border: #999 thin solid;
+        background-color: #fff
+    }
+
+    .counter li input {
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        border: 1px solid transparent;
+        border-radius: 0;
+    }
+
+    #countnum {
+        border-left: hidden;
+        border-right: hidden;
+        color: #666
+    }
+
+    .cart .offcanvas-header {
+        background-color: #000;
+        width: auto;
+        height: 10%;
+    }
+
+    .cart .offcanvas-body {
+        position: relative;
+        background: #848d86;
+    }
+
+    .purchase hr {
+        position: absolute;
+        left: 5%;
+        bottom: 14%;
+        width: 90%;
+    }
+
+    .purchase h4 {
+        text-align: center;
+        position: absolute;
+        left: 5%;
+        bottom: 10%;
+        color: #212529;
+    }
+
+    .purchase .btn {
+        position: absolute;
+        left: 5%;
+        bottom: 2%;
+        width: 90%;
+    }
+</style>
+
+
+<body>
+    <button class="bi bi-cart-fill" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"></button>
+
+    <div class="cart offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button class="bi bi-chevron-right" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h4 id="offcanvasRightLabel">購物車</h4>
+        </div>
+        <div class="offcanvas-body">
+
+            <div class="item">
+                <img src="../img/pig.jpg" alt="">
+                <p style="width: 40%;">苦橙葉單方精油<br>
+                    <del>NT$1,280</del> NT$960
+                </p>
+
+                <ul class="counter">
+                    <li id="minus"><input type="button" onclick="minuser()" value="-" /></li>
+                    <li id="countnum">1</li>
+                    <li id="plus"><input type="button" onclick="adder()" value="+" /></li>
+                </ul>
+                <i class="bi bi-trash"></i>
+            </div>
+
+            <div class="item">
+                <img src="../img/pig.jpg" alt="">
+                <p style="width: 40%;">蠟燭 | 天海相接<br>
+                    NT$980
+                </p>
+
+                <ul class="counter">
+                    <li id="minus1"><input type="button" onclick="minuser1()" value="-" /></li>
+                    <li id="countnum1">1</li>
+                    <li id="plus1"><input type="button" onclick="adder1()" value="+" /></li>
+                </ul>
+                <i class="bi bi-trash"></i>
+            </div>
+
+            <div class="purchase">
+                <hr>
+                <h4>小計：NT$1,940</h4>
+                <a href="#" class="btn btn-outline-dark text-center d-block">購物車明細</a>
+            </div>
+        </div>
+    </div>
+
+    <script>function adder() {
+            var count = $("#countnum").text();
+            count = parseInt(count) + 1;
+            $("#countnum").text(count);
+        }
+        function minuser() {
+            var count = $("#countnum").text();
+            if (count <= 0) {
+                count = 0;
+            } else {
+                count = parseInt(count) - 1;
+            }
+            $("#countnum").text(count);
+        }</script>
+
+    <script>function adder1() {
+            var count = $("#countnum1").text();
+            count = parseInt(count) + 1;
+            $("#countnum1").text(count);
+        }
+        function minuser1() {
+            var count = $("#countnum1").text();
+            if (count <= 0) {
+                count = 0;
+            } else {
+                count = parseInt(count) - 1;
+            }
+            $("#countnum1").text(count);
+        }</script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

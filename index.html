@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=3.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="./img/favicon.svg" type="image/x-icon" rel="icon" />
+    <meta charset="UTF-8" />
+    <title>25°C</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../assist/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="../assist/slick-1.8.1/slick/slick-theme.css">
+
+
+    <style>
+     /* =========header=========== */
+     header {
+  font-family: sans-serif;
+}
+
+.navbar {
+  background-color: #091b0c;
+  box-shadow: 10px black;
+}
+
+.navbar-nav {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  /* overflow: hidden; */
+}
+
+.nav-item {
+  transition: all 0.5s;
+}
+
+.dropdown-toggle.show,
+.header-nav-item:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #516b56;
+}
+
+.dropdown-menu {
+  transition: all 0.5s;
+  background-color: #091b0c;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.5s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: #516b56;
+}
+
+.logo {
+  transition: all 0.5s;
+}
+
+.logo img {
+  margin: auto -30px;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.btn_login {
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  transition: all 0.5s;
+  margin-top: 30px;
+}
+
+.btn_login:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+  background-color: #516b56;
+}
+
+.btn_login:focus {
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .btn_login {
+    margin-top: 0;
+  }
+  /* .logo img {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+  } */
+}
+
+.form-control {
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: all 0.5s;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+  box-shadow: none;
+}
+
+.btn-outline-success {
+  border-color: transparent;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.55);
+  transition: all 0.5s;
+}
+
+.btn-outline-success:hover {
+  background-color: #516b56;
+  border-color: transparent;
+}
+
+.btn_cart {
+  color: rgba(255, 255, 255, 0.75);
+  /* border: 1px solid rgba(255, 255, 255, 0.55); */
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+.btn_cart:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+  background-color: #516b56;
+}
+
+.btn_cart:focus {
+  box-shadow: none;
+}
+
+/* @media(min-width:768px){
+      .btn_cart {
+        display: ;
+      }
+    } */
+
+/* main */
+.btn_toshop {
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+.btn_toshop:focus {
+  box-shadow: none;
+}
+
+.btn_toshop:hover {
+  color: rgba(255, 255, 255, 0.95);
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.offcanvas {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: #516b56;
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas-header {
+  background-color: #091b0c;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.offcanvas-header h5 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 auto;
+  font-weight: 100;
+}
+
+.offcanvas-header button {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 35px;
+  font-weight: 100;
+  font-family: sans-serif;
+  background-color: transparent;
+  padding-left: 20px;
+}
+
+.cart-prod-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* ====================cart======================= */
+.cart hr {
+  margin-right: 50px;
+  border: 2px solid #fff;
+}
+
+.cart h4 {
+  margin: auto;
+  color: #fff;
+}
+
+.cart del {
+  color: #aaa;
+}
+
+.cart .item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.cart .item img {
+  width: 75px;
+  height: 75px;
+}
+
+.cart .item p {
+  color: rgb(9, 27, 12);
+  font-weight: bold;
+  font-size: 18px;
+  margin: auto 0;
+}
+
+.cart ul,
+.cart li {
+  margin: 0;
+  padding: 0;
+}
+
+.counter li {
+  float: left;
+  list-style-type: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: #999 thin solid;
+  background-color: #fff;
+}
+
+.counter li input {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+#countnum {
+  border-left: hidden;
+  border-right: hidden;
+  color: #666;
+}
+
+.cart .offcanvas-header {
+  background-color: #000;
+  width: auto;
+  height: 10%;
+}
+
+.cart .offcanvas-body {
+  position: relative;
+  background: #848d86;
+}
+
+.purchase h4 {
+  text-align: center;
+  color: #212529;
+}
+
+.purchase {
+  width: 90%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+      /* ==========main=========== */
+      .btn_toshop {
+        color: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 8px;
+        transition: all 0.5s;
+      }
+      .btn_toshop:focus {
+        box-shadow: none;
+      }
+      .btn_toshop:hover {
+        color: rgba(255, 255, 255, 0.95);
+        border-color: transparent;
+        background-color: rgba(0, 0, 0, 0.55);
+      }
+      body {
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(./img/index/welcome.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .welcome {
+        /* background-image: url(./img/index/welcome.jpg); */
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+        width: auto;
+      }
+
+      .welcome .container-xl {
+        height: 100%;
+      }
+
+      .title-h3 {
+        color: rgba(255, 255, 255, 0.8);
+        font-family: serif;
+        letter-spacing: 3px;
+        font-size: min(calc(1rem + 1vw), 30px);
+        font-weight: 300;
+        padding-bottom: 1vw;
+        animation-duration: 2s;
+      }
+      .eng-content {
+        color: rgba(255, 255, 255, 0.75);
+        font-family: serif;
+        font-size: min(calc(0.6rem + 0.8vw), 30px);
+        letter-spacing: 3px;
+        padding-bottom: 3vw;
+        animation-duration: 2s;
+      }
+
+      .best-seller {
+        /* background-image: url(./img/index/best-seller-bg.jpg); */
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+        width: auto;
+      }
+      @media (min-width: 768px) {
+        .welcome {
+          height: 120vh;
+        }
+        .best-seller {
+          height: 150vh;
+        }
+        .btn_cart {
+          order: 10;
+        }
+      }
+   
+      .display {
+        position: relative;
+        width: 100%;
+        /* background-color: #091b0c; */
+        animation-duration: 2s;
+      }
+      .display .left {
+        width: 60vw;
+        height: 100vh;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(./img/display-scents.jpg);
+      }
+      /* .display .right-top::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 10px;
+      } */
+      .display .right-top {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 39vw;
+        height: 49%;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(./img/display-oil.jpg);
+      }
+      .display .right-bottom {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 39vw;
+        height: 49%;
+        background: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(./img/display-body.jpg);
+      }
+      .display .left:hover,
+      .display .right-top:hover,
+      .display .right-bottom:hover {
+        background-size: 110%;
+      }
+      .display .left,
+      .display .right-top,
+      .display .right-bottom {
+        background-size: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        transition: all 0.7s ease-in-out;
+        box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.447);
+      }
+      .display-text {
+        color: #fff;
+        font-family: serif;
+      }
+
+     /* ==============footer================== */
+      footer {
+    font-family: sans-serif;
+  }
+
+  footer .icons a {
+    padding: 30px 10px 100px 10px;
+  }
+
+  .footer-body {
+    padding: 100px 0 80px 0;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #091b0c;
+  }
+
+  .footer-body .title {
+    color: rgba(255, 255, 255, 0.75);
+    padding-bottom: 30px;
+    font-size: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-body .title {
+      font-size: 24px;
+    }
+
+    .footer-body a,
+    .footer-body p {
+      font-size: 16px;
+    }
+  }
+
+  .footer-body .map a,
+  .footer-body .map p {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.75);
+    display: block;
+    margin: 0;
+    padding-bottom: 5px;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    background-color: #fff;
+    text-align: center;
+    color: #091b0c;
+    padding-top: 10px;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  footer .logo {
+    transition: all 0.5s;
+  }
+
+  footer .logo:hover {
+    transform: scale(1.05);
+  }
+
+  footer hr {
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    height: 2px;
+    max-width: 500px;
+  }
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark p-3" id="headerNav">
+        <div class="container-xl p-1">
+          <!-- 手機版logo -->
+          <a class="navbar-brand d-block d-lg-none" href="#">
+            <img src="./img/25degrees_logo.png" class="logo" style="height: 100px;" />
+          </a>
+    
+          <!-- 購物車 -->
+          <button type=" button" class="btn btn_cart order-lg-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
+            <i class="bi bi-cart pe-2"></i>購物車
+            <span>2</span>
+          </button>
+    
+          <!-- 手機版漢堡選單 -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- 桌機版navbar -->
+          <div class="collapse navbar-collapse position-relative" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown p-1 header-nav-item">
+                <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Shop
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="./webpage/shop.php">所有商品</a></li>
+                  <li><a class="dropdown-item" href="#">香氛</a></li>
+                  <li><a class="dropdown-item" href="#">精油</a></li>
+                  <li><a class="dropdown-item" href="#">身體保養</a></li>
+                  <li><a class="dropdown-item" href="#">臉部保養</a></li>
+                </ul>
+              </li>
+              <li class="nav-item p-1 header-nav-item">
+                <a class="nav-link mx-2" aria-current="page" href="./webpage/massage.php">精油按摩</a>
+              </li>
+              <li class="nav-item p-1 header-nav-item">
+                <a class="nav-link mx-2" href="./webpage/blog.php">專欄</a>
+              </li>
+              <li class="nav-item p-1 header-nav-item">
+                <a class="nav-link mx-2" href="./webpage/about.php">關於25°C</a>
+              </li>
+            </ul>
+    
+            <!-- logo -->
+            <div class="logo d-lg-block mx-auto d-none">
+              <li class="d-lg-block me-5">
+                <a class="nav-link mx-2 me-5" href="#">
+                  <img src="./img/25degrees_logo.png" class="me-5" height="150" />
+                </a>
+              </li>
+            </div>
+    
+            <!-- 登入按鈕 -->
+            <a href="./webpage/login.php"><button type="button" class="btn btn_login m-xl-3">
+                登入/註冊
+              </button></a>
+    
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- =================== cart ======================== -->
+    <div class="cart offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <button type="button" data-bs-dismiss="offcanvas" aria-label="Close" style="border: none;">&gt;</button>
+        <h5 id="offcanvasRightLabel">購物車</h5>
+      </div>
+      <div class="offcanvas-body">
+    
+    
+        <div class="item">
+          <img src="./img/product_s/1.png" alt="">
+          <p style="width: 40%;">苦橙葉單方精油<br>
+            <del>NT$1,280</del> NT$960
+          </p>
+    
+          <ul class="counter">
+            <li id="minus"><input type="button" onclick="minuser()" value="-" /></li>
+            <li id="countnum">1</li>
+            <li id="plus"><input type="button" onclick="adder()" value="+" /></li>
+          </ul>
+          <i class="bi bi-trash"></i>
+        </div>
+    
+        <div class="item">
+          <img src="./img/product_s/9.png" alt="">
+          <p style="width: 40%;">蠟燭 | 天海相接<br>
+            NT$980
+          </p>
+    
+          <ul class="counter">
+            <li id="minus1"><input type="button" onclick="minuser1()" value="-" /></li>
+            <li id="countnum1">1</li>
+            <li id="plus1"><input type="button" onclick="adder1()" value="+" /></li>
+          </ul>
+          <i class="bi bi-trash"></i>
+        </div>
+    
+        <div class="purchase d-flex flex-column">
+          <h4>小計：NT$1,940</h4>
+          <a href="#" class="btn btn-outline-dark text-center d-block">購物車明細</a>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <main>
+      <!-- welcome section -->
+      <section class="welcome">
+        <!-- <img src="./img/index/welcome.jpg" alt=""> -->
+        <div
+          class="container-xl d-flex flex-column justify-content-center align-items-center"
+        >
+          <h3
+            class="title-h3 text-center wow animate__animated animate__fadeIn"
+          >
+            在忙碌的城市中，提供一個靜下心來的空間，及療癒的生活選品。
+          </h3>
+          <p class="eng-content wow animate__animated animate__fadeIn">
+            Find your peace at 25 degrees.
+          </p>
+          <button type="button" class="btn btn_toshop p-3 ps-5 pe-5">
+            前往商店
+          </button>
+        </div>
+      </section>
+
+      <!-- display大圖 section -->
+      <section
+        class="display d-none d-lg-block wow animate__animated animate__fadeInLeft"
+      >
+        <!-- 香氛 -->
+        <a href="#" class="text-decoration-none">
+          <div
+            class="left d-flex flex-column justify-content-center align-items-center me-1"
+          >
+            <h4 class="display-text fs-1">香 氛</h4>
+            <p class="display-text fs-4">Scents</p>
+          </div>
+        </a>
+        <!-- 精油 -->
+        <a href="" class="text-decoration-none">
+          <div
+            class="right-top d-flex flex-column justify-content-center align-items-center mb-1 ms-1"
+          >
+            <h4 class="display-text fs-1">精 油</h4>
+            <p class="display-text fs-4">Essential Oil</p>
+          </div>
+        </a>
+        <!-- 身體保養 -->
+        <a href="" class="text-decoration-none">
+          <div
+            class="right-bottom d-flex flex-column justify-content-center align-items-center ms-1"
+          >
+            <h4 class="display-text fs-1">身 體 保 養</h4>
+            <p class="display-text fs-4">Body Care</p>
+          </div>
+        </a>
+      </section>
+
+      <!-- 本月熱銷 -->
+      <!-- <section
+        class="best-seller d-flex flex-column justify-content-center align-items-center wow animate__fadeInDown"
+      >
+        <h3 class="title-h3">本月熱銷</h3>
+        <span class="eng-content">Best-seller</span> -->
+
+        <!-- slider -->
+      
+        
+      <!-- </section> -->
+    </main>
+
+    <footer>
+      <!-- <hr class="m-0" /> -->
+      <div class="footer-body">
+        <div class="row ">
+          <div class="col-12 text-center d-block mb-4">
+            <a href="../index.html"><img src="./img/25degrees_logo.png" height="150" class="logo" /></a>
+            <div class="icons d-flex justify-content-center">
+              <a href="https://www.facebook.com/profile.php?id=61550127427710"><img src="./img/fb-logo.png" alt=""></a>
+              <a href="https://www.instagram.com/25degrees.tw/">
+                <img src="./img/ig-logo.png" alt=""></a>
+              <a href="https://line.me/R/ti/p/@374sfkoe?oat_content=url">
+                <img src="./img/line-logo.png" alt=""></a>
+            </div>
+          </div>
+    
+          <hr>
+    
+        </div>
+        <div class="container-xl">
+          <div class="row mt-5 map">
+            <div class="col-4">
+              <div class="title">聯絡我們</div>
+              <p>週一至週五</p>
+              <p>9:00 -12:00 | 13:00 - 18:00</p>
+              <a href="javascript:">facebook 粉絲團</a>
+              <a href="javascript:">line一對一客服</a>
+              <a href="javascript:">25°C社團</a>
+            </div>
+            <div class="col-4">
+              <div class="title">Shop</div>
+              <a href="javascript:">所有商品</a>
+              <a href="javascript:">香氛</a>
+              <a href="javascript:">精油</a>
+              <a href="javascript:">身體保養</a>
+              <a href="javascript:">臉部保養</a>
+            </div>
+            <div class="col-4">
+              <div class="title">顧客服務</div>
+              <a href="javascript:">常見問題</a>
+              <a href="javascript:">運送與退換貨</a>
+              <a href="javascript:">隱私權政策</a>
+              <a href="javascript:">條款與細則</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+
+        <p>© 2023 by 25°C. All Rights Reserved.</p>
+      </div>
+    
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+<script type="text/javascript" src="../assist/slick-1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $('.responsive').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 6,
+        slidesToScroll: 6,
+        responsive: [{
+                breakpoint: 1499,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                }
+            },
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+</script>
+ 
+  
+  </body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Shop</title>
+
+    <style>
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #091B0C;
+            overflow-x: hidden;
+            margin: 15px;
+        }
+
+        aside {
+            float: left;
+            width: 12.5%;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        hr {
+            margin-right: 50px;
+            border: 2px solid #fff;
+        }
+
+        main {
+            float: right;
+            width: 87.5%;
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        #dropdown1 {
+            float: right;
+            position: absolute;
+            right: 0%;
+            top: 0%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #212529;
+        }
+
+        #dropdown1 a {
+            color: #fff;
+
+        }
+
+        aside a {
+            color: #fff;
+            line-height: 2;
+        }
+
+        aside a:hover {
+            color: #fff;
+        }
+
+        .active {
+            font-weight: 900;
+        }
+
+        .offcanvas-start {
+            width: 45%;
+        }
+
+        @media(max-width:991px) {
+            aside {
+                width: 30%
+            }
+
+            main {
+                float: right;
+                width: 70%;
+                position: relative;
+            }
+
+            #dropdown1 {
+                float: right;
+                position: absolute;
+                right: 5%;
+                top: 0;
+            }
+        }
+
+        @media(max-width:319px) {
+            aside {
+                display: none;
+                width: 0%;
+            }
+        }
+
+        @media(max-width:599px) {
+            aside {
+                display: none;
+                width: 0%;
+            }
+
+            main {
+                float: right;
+                width: 100%;
+                position: relative;
+            }
+
+            #dropdown1 {
+                float: right;
+                position: absolute;
+                right: 15%;
+                top: 0;
+            }
+
+            .show-offcanvas {
+                position: absolute;
+                right: 55%;
+                top: 5px;
+            }
+        }
+
+        @media(min-width:600px) {
+
+            .show-offcanvas,
+            .show-offcanvas {
+                display: none;
+            }
+        }
+
+
+
+        .info h5,
+        p {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .card {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            width: 14rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .card-text {
+            padding-bottom: 1rem;
+        }
+
+        .sale {
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 20%;
+            height: auto;
+        }
+
+        h4 {
+            margin: auto;
+            color: #fff;
+        }
+
+        del {
+            color: #aaa;
+        }
+
+        /* .item {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .item img {
+            width: 75px;
+            height: 75px;
+
+        }
+
+        .item p {
+            color: rgb(9, 27, 12);
+            font-weight: bold;
+            font-size: 18px;
+            margin: auto 0;
+        }
+
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        .counter li {
+            float: left;
+            list-style-type: none;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: #999 thin solid;
+            background-color: #fff
+        }
+
+        .counter li input {
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            background: none;
+            margin: 0;
+            padding: 0;
+            border: 1px solid transparent;
+            border-radius: 0;
+        }
+
+        #countnum {
+            border-left: hidden;
+            border-right: hidden;
+            color: #666
+        }
+
+        .offcanvas-header {
+            background-color: #000;
+            width: auto;
+            height: 10%;
+        }
+
+        .offcanvas-body {
+            position: relative;
+            background: #848d86;
+        }
+
+        .purchase hr {
+            position: absolute;
+            left: 5%;
+            bottom: 14%;
+            width: 90%;
+        }
+
+        .purchase h4 {
+            text-align: center;
+            position: absolute;
+            left: 5%;
+            bottom: 10%;
+            color: #212529;
+        }
+
+        .purchase .btn {
+            position: absolute;
+            left: 5%;
+            bottom: 2%;
+            width: 90%;
+        } */
+
+        @media(max-width:700px) {}
+
+        .content {
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <?php include('header.php'); ?>
+
+
+    <!--     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight">'放在購物車的ICON'</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <button class="bi bi-chevron-right" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h4 id="offcanvasRightLabel">購物車</h4>
+        </div>
+        <div class="offcanvas-body">
+
+            <div class="item">
+                <img src="../img/pig.jpg" alt="">
+                <p style="width: 40%;">苦橙葉單方精油<br>
+                    <del>NT$1,280</del> NT$960
+                </p>
+
+                <ul class="counter">
+                    <li id="minus"><input type="button" onclick="minuser()" value="-" /></li>
+                    <li id="countnum">1</li>
+                    <li id="plus"><input type="button" onclick="adder()" value="+" /></li>
+                </ul>
+                <i class="bi bi-trash"></i>
+            </div>
+
+            <div class="item">
+            <img src="../img/pig.jpg" alt="">
+            <p style="width: 40%;">蠟燭 | 天海相接<br>
+                NT$980
+            </p>
+
+            <ul class="counter">
+                <li id="minus1"><input type="button" onclick="minuser1()" value="-" /></li>
+                <li id="countnum1">1</li>
+                <li id="plus1"><input type="button" onclick="adder1()" value="+" /></li>
+            </ul>
+            <i class="bi bi-trash"></i>
+            </div>
+
+        <div class="purchase">
+                <hr>
+                <h4>小計：NT$1,940</h4>
+                <a href="#" class="btn btn-outline-dark text-center d-block">購物車明細</a>
+            </div>
+        </div>
+    </div> -->
+
+
+    <p style="color: white; padding-bottom: 50px;"><a href="" style="color: white;">首頁</a> ＞ 所有產品</p>
+
+    <div class="content">
+
+        <aside>
+            <h2>分類</h2>
+            <hr>
+            <a href="" class="active">所有產品</a><br>
+            <a href="">身體保養</a><br>
+            <a href="">香氛</a><br>
+            <a href="">新品上架</a><br>
+            <a href="">精油</a><br>
+            <a href="">臉部保養</a><br>
+            <br>
+            <!-- <h2>篩選</h2>
+            <hr> -->
+
+        </aside>
+
+
+        <main>
+            <p style="color: #fff; margin-bottom: -15px;">11 項產品</p>
+
+            <button class="navbar-toggler show-offcanvas" style="background-color: #fff;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft"><i class="bi bi-three-dots" style="color: #000;"></i></button>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel" style="background-color: gray;">
+                <div class="offcanvas-header">
+                    <h2 id="offcanvasLeftLabel"></h2>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <h2>分類</h2>
+                    <hr>
+                    <a href="" class="active">所有產品</a><br>
+                    <a href="">身體保養</a><br>
+                    <a href="">香氛</a><br>
+                    <a href="">新品上架</a><br>
+                    <a href="">精油</a><br>
+                    <a href="">臉部保養</a><br>
+                    <br>
+                    <!-- <h2>篩選</h2>
+                    <hr> -->
+
+                </div>
+            </div>
+
+            <div class="dropdown" id="dropdown1">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdown1MenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    排序方式
+                </button>
+                <ul class="dropdown-menu" id="dropdown-menu1" aria-labelledby="dropdown1MenuButton1">
+                    <li><a class="dropdown-item" href="#">推薦</a></li>
+                    <li><a class="dropdown-item" href="#">最新</a></li>
+                    <li><a class="dropdown-item" href="#">價格 (從低到高)</a></li>
+                    <li><a class="dropdown-item" href="#">價格 (從高到低)</a></li>
+                    <li><a class="dropdown-item" href="#">名稱 (A~Z)</a></li>
+                    <li><a class="dropdown-item" href="#">名稱 (Z~A)</a></li>
+                </ul>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5">
+                <div class="col m-auto">
+                    <div class="card"><a class="info" href="./product-1.php">
+                            <img class="sale" src="../img/Sale.png" alt="">
+                            <img src="../img/product_s/1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">活力複方精油</h5>
+                                <p class="card-text">NT$1,080</p>
+                                <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card"><a class="info" href="./product-2.php">
+                        <img class="sale" src="../img/Sale.png" alt="">
+                        <img src="../img/product_s/2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">苦橙葉單方精油</h5>
+                            <p class="card-text"><del>NT$1,280</del> NT$960</p>
+                            <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+                    </a>
+                </div>
+            </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-3.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">大麻喚醒按摩精油</h5>
+                    <p class="card-text">NT$1,580</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-4.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/4.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">溫和植萃沐浴組</h5>
+                    <p class="card-text">NT$980</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-5.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/5.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">柚木沐浴皂3件組</h5>
+                    <p class="card-text"><del>NT$680</del> NT$510</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-6.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/6.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">保濕修護乳霜</h5>
+                    <p class="card-text">NT$1,280</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-7.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/7.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">玫瑰淨白精華</h5>
+                    <p class="card-text">NT$2,180</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-8.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/8.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">超保濕6件組</h5>
+                    <p class="card-text"><del>NT$3,380</del> NT$3,080</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-9.php">
+                <img src="../img/product_s/9.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">蠟燭 | 天海相接</h5>
+                    <p class="card-text">NT$980</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-10.php">
+                <img class="sale" src="../img/Sale.png" alt="">
+                <img src="../img/product_s/10.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">蠟燭 | 松林清晨</h5>
+                    <p class="card-text"><del>NT$980</del> NT$880</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+        <div class="card"><a class="info" href="./product-11.php">
+                <img src="../img/product_s/11.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">蠟燭 | 原野芬芳</h5>
+                    <p class="card-text">NT$980</p>
+                    <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
+            </a>
+        </div>
+    </div>
+    </div>
+
+    </main>
+    </div>
+
+    <?php include('footer.php'); ?>
+
+
+    <!--     <script>function adder() {
+            var count = $("#countnum").text();
+            count = parseInt(count) + 1;
+            $("#countnum").text(count);
+        }
+        function minuser() {
+            var count = $("#countnum").text();
+            if (count <= 0) {
+                count = 0;
+            } else {
+                count = parseInt(count) - 1;
+            }
+            $("#countnum").text(count);
+        }</script>
+
+<script>function adder1() {
+            var count = $("#countnum1").text();
+            count = parseInt(count) + 1;
+            $("#countnum1").text(count);
+        }
+        function minuser1() {
+            var count = $("#countnum1").text();
+            if (count <= 0) {
+                count = 0;
+            } else {
+                count = parseInt(count) - 1;
+            }
+            $("#countnum1").text(count);
+        }</script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <script src="../assist/ap.js"></script>
+
+</body>
+
+
+</html>

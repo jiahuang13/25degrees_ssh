@@ -1,0 +1,92 @@
+
+  .blog {
+    width: 100%;
+    background-color: #091b0c;
+  }
+
+  .container {
+    background-color: #091b0c;
+    max-width: 1000px;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 50px 100px;
+    color: #fff
+  }
+
+  .container img {
+    width: 100%;
+    padding: 30px 0;
+    object-fit: cover;
+  }
+
+  .container h6 {
+    font-size: 0.75rem;    
+  }
+
+  .container h1 {
+    font-size: 2rem;
+    padding: 30px 0;
+  }
+
+  .container h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 15px 0;
+  }
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container li {
+    padding: 5px 0;
+  }
+
+  .newblog {
+    max-width: 1000px;
+    color: #fff;
+    margin: auto;  
+    padding: 0px;
+  }
+
+  .newblog h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 50px;
+  }
+
+.card  {
+  background-color: rgba(255, 255, 255, 0.5);
+ border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0px;
+  }
+
+.card img {
+    width: 100%;
+    height:180px;
+    object-fit: cover;
+
+  }
+
+.card-body {
+  background-color: #091b0c;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.card-title {
+  font-size: 1.2rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover, a:active, .card-text:hover {
+  color: #516b56;
+  text-decoration: none;
+}
+
+.row {
+  padding-left: 0px;
+  padding-right: 0px;
+}

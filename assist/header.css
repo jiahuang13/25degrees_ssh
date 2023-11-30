@@ -1,0 +1,281 @@
+header {
+  font-family: sans-serif;
+}
+
+.navbar {
+  background-color: #091b0c;
+  box-shadow: 10px black;
+}
+
+.navbar-nav {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  /* overflow: hidden; */
+}
+
+.nav-item {
+  transition: all 0.5s;
+}
+
+.dropdown-toggle.show,
+.header-nav-item:hover {
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #516b56;
+}
+
+.dropdown-menu {
+  transition: all 0.5s;
+  background-color: #091b0c;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.dropdown-item {
+  color: rgba(255, 255, 255, 0.75);
+  transition: all 0.5s;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active,
+.dropdown-item:focus {
+  background-color: #516b56;
+}
+
+.logo {
+  transition: all 0.5s;
+}
+
+.logo img {
+  margin: auto -30px;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+.btn_login {
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  transition: all 0.5s;
+  margin-top: 30px;
+}
+
+.btn_login:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+  background-color: #516b56;
+}
+
+.btn_login:focus {
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .btn_login {
+    margin-top: 0;
+  }
+  /* .logo img {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+  } */
+}
+
+.form-control {
+  width: 150px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: all 0.5s;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
+  box-shadow: none;
+}
+
+.btn-outline-success {
+  border-color: transparent;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.55);
+  transition: all 0.5s;
+}
+
+.btn-outline-success:hover {
+  background-color: #516b56;
+  border-color: transparent;
+}
+
+.btn_cart {
+  color: rgba(255, 255, 255, 0.75);
+  /* border: 1px solid rgba(255, 255, 255, 0.55); */
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+.btn_cart:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+  background-color: #516b56;
+}
+
+.btn_cart:focus {
+  box-shadow: none;
+}
+
+/* @media(min-width:768px){
+      .btn_cart {
+        display: ;
+      }
+    } */
+
+/* main */
+.btn_toshop {
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+
+.btn_toshop:focus {
+  box-shadow: none;
+}
+
+.btn_toshop:hover {
+  color: rgba(255, 255, 255, 0.95);
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.offcanvas {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: #516b56;
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas-header {
+  background-color: #091b0c;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.offcanvas-header h5 {
+  text-align: center;
+  font-size: 24px;
+  margin: 0 auto;
+  font-weight: 100;
+}
+
+.offcanvas-header button {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 35px;
+  font-weight: 100;
+  font-family: sans-serif;
+  background-color: transparent;
+  padding-left: 20px;
+}
+
+.cart-prod-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* ====================cart======================= */
+.cart hr {
+  margin-right: 50px;
+  border: 2px solid #fff;
+}
+
+.cart h4 {
+  margin: auto;
+  color: #fff;
+}
+
+.cart del {
+  color: #aaa;
+}
+
+.cart .item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.cart .item img {
+  width: 75px;
+  height: 75px;
+}
+
+.cart .item p {
+  color: rgb(9, 27, 12);
+  font-weight: bold;
+  font-size: 18px;
+  margin: auto 0;
+}
+
+.cart ul,
+.cart li {
+  margin: 0;
+  padding: 0;
+}
+
+.counter li {
+  float: left;
+  list-style-type: none;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: #999 thin solid;
+  background-color: #fff;
+}
+
+.counter li input {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+#countnum {
+  border-left: hidden;
+  border-right: hidden;
+  color: #666;
+}
+
+.cart .offcanvas-header {
+  background-color: #000;
+  width: auto;
+  height: 10%;
+}
+
+.cart .offcanvas-body {
+  position: relative;
+  background: #848d86;
+}
+
+.purchase h4 {
+  text-align: center;
+  color: #212529;
+}
+
+.purchase {
+  width: 90%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
