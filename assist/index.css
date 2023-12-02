@@ -1,3 +1,4 @@
+/* =========header=========== */
 header {
   font-family: sans-serif;
 }
@@ -279,7 +280,200 @@ header {
   bottom: 5%;
   right: 5%;
 }
-
 .logout {
   border-color: transparent;
+}
+/* ==========main=========== */
+.btn_toshop {
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.btn_toshop:focus {
+  box-shadow: none;
+}
+.btn_toshop:hover {
+  color: rgba(255, 255, 255, 0.95);
+  border-color: transparent;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+body {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/index/welcome.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome {
+  /* background-image: url(./img/index/welcome.jpg); */
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+}
+
+.welcome .container-xl {
+  height: 100%;
+}
+
+.title-h3 {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: serif;
+  letter-spacing: 3px;
+  font-size: min(calc(1rem + 1vw), 30px);
+  font-weight: 300;
+  padding-bottom: 1vw;
+  animation-duration: 2s;
+}
+.eng-content {
+  color: rgba(255, 255, 255, 0.75);
+  font-family: serif;
+  font-size: min(calc(0.6rem + 0.8vw), 30px);
+  letter-spacing: 3px;
+  padding-bottom: 3vw;
+  animation-duration: 2s;
+}
+
+.best-seller {
+  /* background-image: url(./img/index/best-seller-bg.jpg); */
+  background-position: center;
+  background-size: cover;
+  height: 50vh;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .welcome {
+    height: 120vh;
+  }
+  .best-seller {
+    height: 150vh;
+  }
+  .btn_cart {
+    order: 10;
+  }
+}
+
+.display {
+  position: relative;
+  width: 100%;
+  /* background-color: #091b0c; */
+  animation-duration: 2s;
+}
+.display .left {
+  width: 60vw;
+  height: 100vh;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/display-scents.jpg);
+}
+/* .display .right-top::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 10px;
+      } */
+.display .right-top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 39vw;
+  height: 49%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/display-oil.jpg);
+}
+.display .right-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 39vw;
+  height: 49%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/display-body.jpg);
+}
+.display .left:hover,
+.display .right-top:hover,
+.display .right-bottom:hover {
+  background-size: 110%;
+}
+.display .left,
+.display .right-top,
+.display .right-bottom {
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 0.7s ease-in-out;
+  box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.447);
+}
+.display-text {
+  color: #fff;
+  font-family: serif;
+}
+
+/* ==============footer================== */
+footer {
+  font-family: sans-serif;
+}
+
+footer .icons a {
+  padding: 30px 10px 100px 10px;
+}
+
+.footer-body {
+  padding: 100px 0 80px 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #091b0c;
+}
+
+.footer-body .title {
+  color: rgba(255, 255, 255, 0.75);
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .footer-body .title {
+    font-size: 24px;
+  }
+
+  .footer-body a,
+  .footer-body p {
+    font-size: 16px;
+  }
+}
+
+.footer-body .map a,
+.footer-body .map p {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  display: block;
+  margin: 0;
+  padding-bottom: 5px;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  background-color: #fff;
+  text-align: center;
+  color: #091b0c;
+  padding-top: 10px;
+  margin: 0;
+  font-size: 16px;
+}
+
+footer .logo {
+  transition: all 0.5s;
+}
+
+footer .logo:hover {
+  transform: scale(1.05);
+}
+
+footer hr {
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  height: 2px;
+  max-width: 500px;
 }

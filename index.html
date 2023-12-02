@@ -27,502 +27,7 @@
     />
     <link rel="stylesheet" href="../assist/slick-1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="../assist/slick-1.8.1/slick/slick-theme.css" />
-
-    <style>
-      /* =========header=========== */
-      header {
-        font-family: sans-serif;
-      }
-
-      .navbar {
-        background-color: #091b0c;
-        box-shadow: 10px black;
-      }
-
-      .navbar-nav {
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 8px;
-        /* overflow: hidden; */
-      }
-
-      .nav-item {
-        transition: all 0.5s;
-      }
-
-      .dropdown-toggle.show,
-      .header-nav-item:hover {
-        color: rgba(255, 255, 255, 0.75);
-        background-color: #516b56;
-      }
-
-      .dropdown-menu {
-        transition: all 0.5s;
-        background-color: #091b0c;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      .dropdown-item {
-        color: rgba(255, 255, 255, 0.75);
-        transition: all 0.5s;
-      }
-
-      .dropdown-item:hover,
-      .dropdown-item:active,
-      .dropdown-item:focus {
-        background-color: #516b56;
-      }
-
-      .logo {
-        transition: all 0.5s;
-      }
-
-      .logo img {
-        margin: auto -30px;
-      }
-
-      .logo img:hover {
-        transform: scale(1.05);
-      }
-
-      .btn_login {
-        color: rgba(255, 255, 255, 0.55);
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        border-radius: 8px;
-        transition: all 0.5s;
-        margin-top: 30px;
-      }
-
-      .btn_login:hover {
-        color: rgba(255, 255, 255, 0.75);
-        border-color: transparent;
-        background-color: #516b56;
-      }
-
-      .btn_login:focus {
-        box-shadow: none;
-      }
-
-      @media (min-width: 768px) {
-        .btn_login {
-          margin-top: 0;
-        }
-        /* .logo img {
-    position: absolute;
-    left: 50%;
-    top: 5%;
-  } */
-      }
-
-      .form-control {
-        width: 150px;
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        border-radius: 8px;
-        color: rgba(255, 255, 255, 0.55);
-        transition: all 0.5s;
-      }
-
-      .form-control:focus {
-        background-color: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.75);
-        color: rgba(255, 255, 255, 0.75);
-        box-shadow: none;
-      }
-
-      .btn-outline-success {
-        border-color: transparent;
-        border-radius: 50%;
-        color: rgba(255, 255, 255, 0.55);
-        transition: all 0.5s;
-      }
-
-      .btn-outline-success:hover {
-        background-color: #516b56;
-        border-color: transparent;
-      }
-
-      .btn_cart {
-        color: rgba(255, 255, 255, 0.75);
-        /* border: 1px solid rgba(255, 255, 255, 0.55); */
-        border-radius: 8px;
-        transition: all 0.5s;
-      }
-
-      .btn_cart:hover {
-        color: rgba(255, 255, 255, 0.75);
-        border-color: transparent;
-        background-color: #516b56;
-      }
-
-      .btn_cart:focus {
-        box-shadow: none;
-      }
-
-      /* @media(min-width:768px){
-      .btn_cart {
-        display: ;
-      }
-    } */
-
-      /* main */
-      .btn_toshop {
-        color: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        border-radius: 8px;
-        transition: all 0.5s;
-      }
-
-      .btn_toshop:focus {
-        box-shadow: none;
-      }
-
-      .btn_toshop:hover {
-        color: rgba(255, 255, 255, 0.95);
-        border-color: transparent;
-        background-color: rgba(0, 0, 0, 0.55);
-      }
-
-      .offcanvas {
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;
-        visibility: hidden;
-        background-color: #516b56;
-        background-clip: padding-box;
-        outline: 0;
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .offcanvas-header {
-        background-color: #091b0c;
-        color: rgba(255, 255, 255, 0.75);
-      }
-
-      .offcanvas-header h5 {
-        text-align: center;
-        font-size: 24px;
-        margin: 0 auto;
-        font-weight: 100;
-      }
-
-      .offcanvas-header button {
-        color: rgba(255, 255, 255, 0.75);
-        font-size: 35px;
-        font-weight: 100;
-        font-family: sans-serif;
-        background-color: transparent;
-        padding-left: 20px;
-      }
-
-      .cart-prod-img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-      }
-
-      /* ====================cart======================= */
-      .cart hr {
-        margin-right: 50px;
-        border: 2px solid #fff;
-      }
-
-      .cart h4 {
-        margin: auto;
-        color: #fff;
-      }
-
-      .cart del {
-        color: #aaa;
-      }
-
-      .cart .item {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 25px 0;
-      }
-
-      .cart .item img {
-        width: 75px;
-        height: 75px;
-      }
-
-      .cart .item p {
-        color: rgb(9, 27, 12);
-        font-weight: bold;
-        font-size: 18px;
-        margin: auto 0;
-      }
-
-      .cart ul,
-      .cart li {
-        margin: 0;
-        padding: 0;
-      }
-
-      .counter li {
-        float: left;
-        list-style-type: none;
-        width: 30px;
-        height: 30px;
-        text-align: center;
-        line-height: 30px;
-        border: #999 thin solid;
-        background-color: #fff;
-      }
-
-      .counter li input {
-        font-size: 20px;
-        width: 100%;
-        height: 100%;
-        outline: none;
-        background: none;
-        margin: 0;
-        padding: 0;
-        border: 1px solid transparent;
-        border-radius: 0;
-      }
-
-      #countnum {
-        border-left: hidden;
-        border-right: hidden;
-        color: #666;
-      }
-
-      .cart .offcanvas-header {
-        background-color: #000;
-        width: auto;
-        height: 10%;
-      }
-
-      .cart .offcanvas-body {
-        position: relative;
-        background: #848d86;
-      }
-
-      .purchase h4 {
-        text-align: center;
-        color: #212529;
-      }
-
-      .purchase {
-        width: 90%;
-        position: absolute;
-        bottom: 5%;
-        right: 5%;
-      }
-
-      /* ==========main=========== */
-      .btn_toshop {
-        color: rgba(255, 255, 255, 0.95);
-        border: 1px solid rgba(255, 255, 255, 0.55);
-        border-radius: 8px;
-        transition: all 0.5s;
-      }
-      .btn_toshop:focus {
-        box-shadow: none;
-      }
-      .btn_toshop:hover {
-        color: rgba(255, 255, 255, 0.95);
-        border-color: transparent;
-        background-color: rgba(0, 0, 0, 0.55);
-      }
-      body {
-        background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(./img/index/welcome.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .welcome {
-        /* background-image: url(./img/index/welcome.jpg); */
-        background-position: center;
-        background-size: cover;
-        height: 50vh;
-        width: auto;
-      }
-
-      .welcome .container-xl {
-        height: 100%;
-      }
-
-      .title-h3 {
-        color: rgba(255, 255, 255, 0.8);
-        font-family: serif;
-        letter-spacing: 3px;
-        font-size: min(calc(1rem + 1vw), 30px);
-        font-weight: 300;
-        padding-bottom: 1vw;
-        animation-duration: 2s;
-      }
-      .eng-content {
-        color: rgba(255, 255, 255, 0.75);
-        font-family: serif;
-        font-size: min(calc(0.6rem + 0.8vw), 30px);
-        letter-spacing: 3px;
-        padding-bottom: 3vw;
-        animation-duration: 2s;
-      }
-
-      .best-seller {
-        /* background-image: url(./img/index/best-seller-bg.jpg); */
-        background-position: center;
-        background-size: cover;
-        height: 50vh;
-        width: auto;
-      }
-      @media (min-width: 768px) {
-        .welcome {
-          height: 120vh;
-        }
-        .best-seller {
-          height: 150vh;
-        }
-        .btn_cart {
-          order: 10;
-        }
-      }
-
-      .display {
-        position: relative;
-        width: 100%;
-        /* background-color: #091b0c; */
-        animation-duration: 2s;
-      }
-      .display .left {
-        width: 60vw;
-        height: 100vh;
-        background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(./img/display-scents.jpg);
-      }
-      /* .display .right-top::after {
-        position: absolute;
-        content: "";
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 10px;
-      } */
-      .display .right-top {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 39vw;
-        height: 49%;
-        background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(./img/display-oil.jpg);
-      }
-      .display .right-bottom {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 39vw;
-        height: 49%;
-        background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(./img/display-body.jpg);
-      }
-      .display .left:hover,
-      .display .right-top:hover,
-      .display .right-bottom:hover {
-        background-size: 110%;
-      }
-      .display .left,
-      .display .right-top,
-      .display .right-bottom {
-        background-size: 100%;
-        background-position: center center;
-        background-repeat: no-repeat;
-        transition: all 0.7s ease-in-out;
-        box-shadow: 1px 1px 50px rgba(255, 255, 255, 0.447);
-      }
-      .display-text {
-        color: #fff;
-        font-family: serif;
-      }
-
-      /* ==============footer================== */
-      footer {
-        font-family: sans-serif;
-      }
-
-      footer .icons a {
-        padding: 30px 10px 100px 10px;
-      }
-
-      .footer-body {
-        padding: 100px 0 80px 0;
-        margin: 0 auto;
-        text-align: center;
-        background-color: #091b0c;
-      }
-
-      .footer-body .title {
-        color: rgba(255, 255, 255, 0.75);
-        padding-bottom: 30px;
-        font-size: 16px;
-      }
-
-      @media (min-width: 768px) {
-        .footer-body .title {
-          font-size: 24px;
-        }
-
-        .footer-body a,
-        .footer-body p {
-          font-size: 16px;
-        }
-      }
-
-      .footer-body .map a,
-      .footer-body .map p {
-        text-decoration: none;
-        color: rgba(255, 255, 255, 0.75);
-        display: block;
-        margin: 0;
-        padding-bottom: 5px;
-        text-decoration: underline;
-        font-size: 14px;
-      }
-
-      .footer-bottom {
-        background-color: #fff;
-        text-align: center;
-        color: #091b0c;
-        padding-top: 10px;
-        margin: 0;
-        font-size: 16px;
-      }
-
-      footer .logo {
-        transition: all 0.5s;
-      }
-
-      footer .logo:hover {
-        transform: scale(1.05);
-      }
-
-      footer hr {
-        border: none;
-        color: rgba(255, 255, 255, 0.75);
-        height: 2px;
-        max-width: 500px;
-      }
-    </style>
+    <link rel="stylesheet" href="./assist/index.css" />
   </head>
   <body>
     <header>
@@ -583,7 +88,7 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a class="dropdown-item" href="./webpage/shop.php"
+                    <a class="dropdown-item" href="./webpage/shop.html"
                       >所有商品</a
                     >
                   </li>
@@ -597,22 +102,24 @@
                 <a
                   class="nav-link mx-2"
                   aria-current="page"
-                  href="./webpage/massage.php"
+                  href="./webpage/massage.html"
                   >精油按摩</a
                 >
               </li>
               <li class="nav-item p-1 header-nav-item">
-                <a class="nav-link mx-2" href="./webpage/blog.php">專欄</a>
+                <a class="nav-link mx-2" href="./webpage/blog.html">專欄</a>
               </li>
               <li class="nav-item p-1 header-nav-item">
-                <a class="nav-link mx-2" href="./webpage/about.php">關於25°C</a>
+                <a class="nav-link mx-2" href="./webpage/about.html"
+                  >關於25°C</a
+                >
               </li>
             </ul>
 
             <!-- logo -->
             <div class="logo d-lg-block mx-auto d-none">
-              <li class="d-lg-block me-5">
-                <a class="nav-link mx-2 me-5" href="#">
+              <li class="d-lg-block ">
+                <a class="nav-link mx-2 " href="#">
                   <img
                     src="./img/25degrees_logo.png"
                     class="me-5"
@@ -626,6 +133,11 @@
             <a href="./webpage/login.html"
               ><button type="button" class="btn btn_login m-xl-3 uname-render">
                 登入/註冊
+              </button></a
+            >
+            <a href=""
+              ><button type="button" class="btn btn_login logout d-none">
+                登出
               </button></a
             >
           </div>
@@ -827,14 +339,9 @@
     <script src="./assist/common.js"></script>
     <script>
       new WOW().init();
-    </script>
-    <script
-      type="text/javascript"
-      src="../assist/slick-1.8.1/slick/slick.min.js"
-    ></script>
 
-    <script>
       renderUsername();
+      logout();
     </script>
   </body>
 </html>

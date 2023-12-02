@@ -100,36 +100,37 @@
 </head>
 
 <body>
-<?php include('header.php'); ?>
+<div class="header"></div>
 
 
     <div class="container">
         
-            <div class="image"><img src="../img/product/8.png" alt=""></div>
+            <div class="image"><img src="../img/product/7.png" alt=""></div>
             <br><br><br>
             <main style="padding-left: 5%;">
-                <h1>超保濕6件組</h1>
-                <br><br>
-                <div class="text" style="float: left; width: 65%;">
-                    <h3 style="font-weight: bold;">超保濕六件組 — 深度滋潤，呵護肌膚的極致奢華</h3>
+            <h1>玫瑰淨白精華</h1>
+            <br><br>
+            <div class="text" style="float: left; width: 65%;">
+                <h3 style="font-weight: bold;">傾心呵護，散發光采的尊爵體驗</h3>
+                <br>
+                <p>我們自豪地呈獻「玫瑰淨白精華」，這款尊爵精華專為您打造，<br>
+                    旨在為您帶來淨白、透亮的膚色，同時深層滋養肌膚，讓您散發自信的美麗光采。
+                    </p><br>
+                <h3 style="font-weight: bold;">尊貴護膚</h3>
+                <br>
+                <p>「玫瑰淨白精華」以珍貴的玫瑰為核心成分，融合高效美白精華，<br>
+                    經過科學配方，能夠有效對抗色斑，淡化暗沉，為您呈現均勻淨白的膚色。<br>
+                    精華的質地輕盈，容易被肌膚吸收，為您的肌膚注入活力和營養。</p><br>
+                    <h3 style="font-weight: bold;">透亮光采</h3>
                     <br>
-                    <p>這是一套專為追求無瑕肌膚護理的產品組合。<br>
-                        深度清潔、保濕、修復，無微不至照顧每一寸肌膚。
-                        </p><br>
-                    <h3 style="font-weight: bold;">六件組內容</h3>
-                    <br>
-                    <p>潔面霜：徹底潔淨肌膚，同時不破壞肌膚的水油平衡，讓肌膚感受到細緻的清潔。<br><br>
-                        保濕化妝水：富含保濕成分，迅速滲透至肌膚底層，為肌膚注入水分，讓肌膚維持水潤飽滿的狀態。<br><br>
-                        精華液：蘊含高效保濕成分，能夠深入滲透至肌膚底層，修復乾燥肌膚，使肌膚更加光滑柔軟。<br><br>
-                        保濕面膜：瞬間提供肌膚所需的水分和營養，令肌膚回復活力，散發健康光彩。<br><br>
-                        日間保濕乳液：輕盈易吸收，為肌膚形成保護屏障，抵禦外界環境的傷害，同時持續為肌膚注入水分。<br><br>
-                        夜間修護霜：富含滋養成分的夜間修護霜能夠在夜間深度滋養肌膚，修復因日間壓力而受損的肌膚。
-                    </p>
+                    <p>不僅可以淡化色斑和暗沉，還能促進肌膚的新陳代謝，讓肌膚回復細緻均勻的狀態。<br>
+                        您的肌膚將變得更加透明明亮，充滿光澤。
+                        </p>
             </div>    
 
                 <div class="buy" style="float: right; width: 35%; text-align: center;">
-                    <del>NT$3,380</del><br><br>
-                <p> NT$3,080<br><br>
+                    <p>NT$2,180
+                        <br><br>
                         數量
                     </p>
                     <input type="number" min="1" step="1" value="1" style="height: 50px;width: 75px;">
@@ -235,12 +236,12 @@
 
     <div>
         <div class="col">
-            <div class="card"><a class="info" href="./product-7.php">
+            <div class="card"><a class="info" href="./product-8.php">
                 <img class="sale" src="../img/Sale.png" alt="">
-                <img src="../img/product_s/7.png" class="card-img-top" alt="...">
+                <img src="../img/product_s/8.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">玫瑰淨白精華</h5>
-                    <p class="card-text">NT$2,180</p>
+                    <h5 class="card-title">超保濕6件組</h5>
+                    <p class="card-text"><del>NT$3,380</del> NT$3,080</p>
                     <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
                     </a>
                 </div>
@@ -295,7 +296,8 @@
 
     </div>
 
-    <?php include('footer.php'); ?>
+    <div class="footer"></div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -304,6 +306,8 @@
     <script type="text/javascript" src="../assist/slick-1.8.1/slick/slick.min.js"></script>
 
     <script>
+        $(".header").load("header.html");
+      $(".footer").load("footer.html");
         $('.responsive').slick({
             dots: false,
             infinite: true,

@@ -29,7 +29,7 @@
               Shop
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="./shop.php">所有商品</a></li>
+              <li><a class="dropdown-item" href="./shop.html">所有商品</a></li>
               <li><a class="dropdown-item" href="#">香氛</a></li>
               <li><a class="dropdown-item" href="#">精油</a></li>
               <li><a class="dropdown-item" href="#">身體保養</a></li>
@@ -37,20 +37,20 @@
             </ul>
           </li>
           <li class="nav-item p-1 header-nav-item">
-            <a class="nav-link mx-2" aria-current="page" href="./massage.php">精油按摩</a>
+            <a class="nav-link mx-2" aria-current="page" href="./massage.html">精油按摩</a>
           </li>
           <li class="nav-item p-1 header-nav-item">
-            <a class="nav-link mx-2" href="./blog.php">專欄</a>
+            <a class="nav-link mx-2" href="./blog.html">專欄</a>
           </li>
           <li class="nav-item p-1 header-nav-item">
-            <a class="nav-link mx-2" href="./about.php">關於25°C</a>
+            <a class="nav-link mx-2" href="./about.html">關於25°C</a>
           </li>
         </ul>
 
         <!-- logo -->
         <div class="logo d-lg-block mx-auto d-none">
-          <li class="d-lg-block me-5">
-            <a class="nav-link mx-2 me-5" href="../index.html">
+          <li class="d-lg-block">
+            <a class="nav-link mx-2" href="../index.html">
               <img src="../img/25degrees_logo.png" class="me-5" height="150" />
             </a>
           </li>
@@ -60,7 +60,9 @@
         <a href="./login.html"><button type="button" class="btn btn_login m-xl-3 uname-render">
             登入/註冊
           </button></a>
-
+          <a href=""><button type="button" class="btn btn_login logout d-none">
+          登出
+          </button></a>
       </div>
     </div>
   </nav>
@@ -117,6 +119,7 @@
 <script src="../assist/common.js"></script>
 <script>
   renderUsername();
+  logout();
 </script>
 <script>
   function adder() {

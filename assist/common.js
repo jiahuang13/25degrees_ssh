@@ -10,21 +10,36 @@ function showToast(msg) {
 }
 
 //抽取校驗函數(首頁和？要用)
-function checkLogin() {
+// function checkLogin() {
+//   const token = localStorage.getItem('token')
+//   console.log(token);
+//   //token為null表示沒有緩存
+//   if (token === null) {
+//     showToast('請先登入')
+//     setTimeout(function () {
+//       location.href = "./webpage/login.html"
+//     }, 1500)
+//   }
+// }
+
+
+//抽取帳號渲染函數 username首頁顯示歡迎 登出按鈕顯示
+function renderUsername() {
+  const username = localStorage.getItem('username')
   const token = localStorage.getItem('token')
-  console.log(token);
-  //token為null表示沒有緩存
-  if (token === null) {
-    showToast('請先登入')
-    setTimeout(function () {
-      location.href = "./webpage/login.html"
-    }, 1500)
+
+  // console.log(username);
+  if (username) {
+    document.querySelector('.uname-render').innerText = `${username}，你好`
+    document.querySelector('.logout').classList.remove('d-none')
   }
 }
 
-//抽取帳號渲染函數 username首頁顯示歡迎
-function renderUsername() {
-  const username = localStorage.getItem('username')
-  // console.log(username);
-  document.querySelector('.uname-render').innerText = `${username}，你好`;
+//抽取登出函數
+function logout() {
+  document.querySelector('.logout').addEventListener('click', function () {
+    localStorage.removeItem('username')
+    localStorage.removeItem('token')
+    document.querySelector('.uname-render').innerText = "登入/註冊"
+  })
 }

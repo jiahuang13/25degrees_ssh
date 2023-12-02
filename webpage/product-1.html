@@ -62,14 +62,6 @@
             text-align: center;
         }
 
-        .sale {
-            position: absolute;
-            left: 3px;
-            top: 3px;
-            width: 20%;
-            height: auto;
-        }
-
         .card-text {
             padding-bottom: 1rem;
         }
@@ -83,6 +75,14 @@
         a {
             text-decoration: none;
             color: #000;
+        }
+
+        .sale {
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            width: 20%;
+            height: auto;
         }
 
         h1,
@@ -100,42 +100,30 @@
 </head>
 
 <body>
-<?php include('header.php'); ?>
+<div class="header"></div>
 
 
     <div class="container">
 
-        <div class="image"><img src="../img/product/3.png" alt=""></div>
+        <div class="image"><img src="../img/product/1.png" alt=""></div>
         <br><br><br>
         <main style="padding-left: 5%;">
-            <h1>大麻喚醒按摩精油</h1>
+            <h1>活力複方精油</h1>
             <br><br>
             <div class="text" style="float: left; width: 65%;">
-                <h3 style="font-weight: bold;">深層放鬆，療癒身心的奢華體驗</h3>
+                <h3 style="font-weight: bold;">提振身心，活力充沛的自然能量</h3>
                 <br>
-                <p>我們自豪地呈獻「大麻喚醒按摩精油」，這是一瓶專為身心放鬆而誕生的奢華療癒之寶。<br>
-                    透過大麻的天然精華，這款精油將帶您進入深層的療癒體驗，讓身心在它的溫柔呵護下得到完美放鬆。
+                <p>我們自豪地呈獻「活力複方精油」，精心調配的精油複方，專為提振您的身心而設計。<br>
+                    結合了多種天然植物精華，為您帶來持久的活力和精神。
                     <br><br>
-                <h3 style="font-weight: bold;">天然療癒力量</h3>
+                <h3 style="font-weight: bold;">多種天然植物力量</h3>
                 <br>
-                <p>「大麻喚醒按摩精油」蘊含了大麻植物的純淨精華，這是大自然賦予我們的珍貴禮物。<br>
-                    大麻精油富含天然的化合物，被廣泛認識為一種能夠舒緩壓力、放鬆身心的自然療癒力量。</p>
-                <br>
-
-                <h3 style="font-weight: bold;">深層放鬆</h3>
-                <br>
-                <p>這款精油是一種極致的療癒體驗，它能夠深入肌膚和心靈。<br>
-                    在按摩時，精油的香氣將帶您進入一個深層的放鬆狀態，讓壓力和疲憊煙消雲散。</p>
-                <br>
-                <h3 style="font-weight: bold;">身心平衡</h3>
-                <br>
-                <p>「大麻喚醒按摩精油」有助於平衡身心，緩解情緒壓力，讓您回復內在的平靜和和諧。<br>
-                    它的療癒能量能夠幫助您找回內在的平衡，使身心恢復活力。</p>
-
+                <p>「活力複方精油」融合了多種天然植物的力量，包括柑橘、薄荷和迷迭香等。<br>
+                    每一種成分都具有獨特的提神和活化效果，讓您在短時間內感受到身心的豐盈。</p>
             </div>
 
             <div class="buy" style="float: right; width: 35%; text-align: center;">
-                <p>NT$1,580
+                <p>NT$1,080
                     <br><br>
                     數量
                 </p>
@@ -150,14 +138,17 @@
         <br><br><br><br>
 
         <h2 style="text-align: center;">相關產品</h2>
+
+        <!-- slick slider -->
         <div class="responsive">
             <div>
                 <div class="col">
-                    <div class="card"><a class="info" href="./product-1.php">
-                            <img src="../img/product_s/1.png" class="card-img-top" alt="...">
+                    <div class="card"><a class="info" href="./product-2.php">
+                            <img class="sale" src="../img/Sale.png" alt="">
+                            <img src="../img/product_s/2.png" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">活力複方精油</h5>
-                                <p class="card-text">NT$1,080</p>
+                                <h5 class="card-title">苦橙葉單方精油</h5>
+                                <p class="card-text"><del>NT$1,280</del> NT$960</p>
                                 <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
                         </a>
                     </div>
@@ -167,12 +158,12 @@
 
         <div>
             <div class="col">
-                <div class="card"><a class="info" href="./product-2.php">
+                <div class="card"><a class="info" href="./product-3.php">
                         <img class="sale" src="../img/Sale.png" alt="">
-                        <img src="../img/product_s/2.png" class="card-img-top" alt="...">
+                        <img src="../img/product_s/3.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">苦橙葉單方精油</h5>
-                            <p class="card-text"><del>NT$1,280</del> NT$960</p>
+                            <h5 class="card-title">大麻喚醒按摩精油</h5>
+                            <p class="card-text">NT$1,580</p>
                             <a href="#" class="btn btn-outline-secondary text-center d-block">新增到購物車</a>
                     </a>
                 </div>
@@ -302,7 +293,8 @@
 
     </div>
 
-    <?php include('footer.php'); ?>
+    <div class="footer"></div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -311,6 +303,9 @@
     <script type="text/javascript" src="../assist/slick-1.8.1/slick/slick.min.js"></script>
 
     <script>
+        $(".header").load("header.html");
+      $(".footer").load("footer.html");
+      
         $('.responsive').slick({
             dots: false,
             infinite: true,
@@ -354,6 +349,7 @@
                 }
             ]
         });
+
     </script>
 </body>
 
