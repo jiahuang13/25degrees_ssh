@@ -304,6 +304,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.toast {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .welcome {
   /* background-image: url(./img/index/welcome.jpg); */
   background-position: center;

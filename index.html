@@ -118,8 +118,8 @@
 
             <!-- logo -->
             <div class="logo d-lg-block mx-auto d-none">
-              <li class="d-lg-block ">
-                <a class="nav-link mx-2 " href="#">
+              <li class="d-lg-block">
+                <a class="nav-link mx-2" href="#">
                   <img
                     src="./img/25degrees_logo.png"
                     class="me-5"
@@ -213,7 +213,18 @@
 
     <main>
       <!-- welcome section -->
-      <section class="welcome">
+      <section class="welcome position-relative">
+        <!-- toast -->
+        <div
+          class="toast bg-rgba my-toast"
+          data-bs-delay="1500"
+          aria-live="assertive"
+          aria-atomic="true"
+          role="alert"
+        >
+          <div class="toast-body">提示消息</div>
+        </div>
+
         <!-- <img src="./img/index/welcome.jpg" alt=""> -->
         <div
           class="container-xl d-flex flex-column justify-content-center align-items-center"
@@ -336,12 +347,47 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+    <script src="../assist/axios.js"></script>
     <script src="./assist/common.js"></script>
     <script>
       new WOW().init();
 
       renderUsername();
       logout();
+
+      //透過token獲取頁面統計數據
+      async function getData() {
+        try {
+          const token = localStorage.getItem("token");
+          // console.log(token);
+          const res = await axios({
+            url: "/dashboard",
+            headers: {
+              Authorization: token,
+            },
+          });
+          // console.log(res.data.data.overview);
+          const overview = res.data.data.overview;
+
+          //渲染數據
+          Object.keys(overview).forEach((key) => {
+            console.log(key);
+            // document.querySelector(`.${key}`).innerText = overview[key]
+          });
+        } catch (error) {
+          // console.dir(error.response.status);
+          if (error.response.status === 401) {
+            localStorage.removeItem("username");
+            localStorage.removeItem("token");
+            document.querySelector(".uname-render").innerText = "登入/註冊";
+            showToast("請重新登錄");
+            setTimeout(function () {
+              location.href = "./webpage/login.html";
+            }, 1500);
+          }
+        }
+      }
+      // getData();
     </script>
   </body>
 </html>

@@ -272,7 +272,7 @@
               },
             });
             console.log(res);
-            showToast(res.data.message);
+            showToast('登入成功');
 
             //緩存響應數據 token,username 首頁會用到
             localStorage.setItem("token", res.data.data.token);
@@ -284,7 +284,7 @@
             },1500)
           } catch (error) {
             console.dir(error);
-            showToast(error.response.data.message);
+            showToast('帳戶或密碼輸入錯誤');
           }
         });
     </script>

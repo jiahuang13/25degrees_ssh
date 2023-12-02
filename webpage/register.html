@@ -95,11 +95,7 @@
         <!-- content -->
         <div class="tab-content">
           <!-- ==============登入tab========================-->
-          <div
-            class="tab-pane fade show active"
-            id="pills-login"
-            role="tabpanel"
-          >
+          <div class="tab-pane fade" id="pills-login" role="tabpanel">
             <form class="login-form">
               <!-- username input -->
               <div data-mdb-input-init class="form-outline mb-4">
@@ -141,7 +137,11 @@
           </div>
 
           <!-- =======================註冊tab======================= -->
-          <div class="tab-pane fade" id="pills-register" role="tabpanel">
+          <div
+            class="tab-pane fade show active"
+            id="pills-register"
+            role="tabpanel"
+          >
             <form class="register-form">
               <!-- Name input -->
               <div data-mdb-input-init class="form-outline mb-4">
@@ -269,10 +269,10 @@
               },
             });
             // console.log(res.data.message);
-            showToast(res.data.message);
+            showToast('註冊成功');
           } catch (error) {
             console.dir(error);
-            showToast(error.response.data.message)
+            showToast('註冊失敗，請再試一次');
           }
         });
     </script>
