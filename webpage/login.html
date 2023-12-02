@@ -275,8 +275,8 @@
             showToast('登入成功');
 
             //緩存響應數據 token,username 首頁會用到
-            localStorage.setItem("token", res.data.data.token);
-            localStorage.setItem("username", res.data.data.username);
+            localStorage.setItem("token", res.data.token);
+            localStorage.setItem("username", res.data.username);
 
             //過數秒 跳轉首頁
             setTimeout(function(){
