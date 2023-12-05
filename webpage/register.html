@@ -270,9 +270,10 @@
             });
             // console.log(res.data.message);
             showToast('註冊成功');
+            setTimeout(function(){location.href = './login.html';},1500)
           } catch (error) {
             console.dir(error);
-            showToast('註冊失敗，請再試一次');
+            showToast(error.response.data.message);
           }
         });
     </script>
